@@ -50,7 +50,15 @@ public class Model {
 		Aluno aluno = null;
 		
 		// Criando uma condição para aluno e o adicionando à lista alunos
+		
+		// Desafio 1: Não pode repetir o nome
 		if (id > 0 && !nome.isBlank()) {
+			
+			for (Aluno a: this.alunos) {
+				if (a.getId() == id) {
+					return null;
+				}
+			}
 			
 			aluno = new Aluno(id, nome);
 			this.alunos.add(aluno);	
